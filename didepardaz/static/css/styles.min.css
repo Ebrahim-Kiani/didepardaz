@@ -602,7 +602,7 @@
   
   /* Footer styles */
   footer {
-    background-color: #292c2f;
+    background-color: rgb(36,45,92);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .12);
     box-sizing: border-box;
     width: 100%;
@@ -653,7 +653,7 @@
   }
   
   .fa.footer-contacts-icon {
-    background-color: #33383b;
+    background-color: rgb(36,45,92);
     color: #fff;
     font-size: 18px;
     width: 38px;
@@ -774,7 +774,7 @@
   
   /* Footer styles */
   footer {
-    background-color: #292c2f;
+    background-color: rgb(36,45,92);
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .12);
     box-sizing: border-box;
     width: 100%;
@@ -825,7 +825,7 @@
   }
   
   .fa.footer-contacts-icon {
-    background-color: #33383b;
+    background-color: rgb(36,45,92);
     color: #fff;
     font-size: 18px;
     width: 38px;
@@ -1006,7 +1006,7 @@ header {
     margin: 0;
     padding: 0;
     width: 100%;
-    background: var(--bs-green);
+    background: rgb(36,45,92);
     border-style: solid;
     border-color: #c14242;
     border-top-width: 2.4px;
