@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # internal app
+    # external apps
+    'django_countries',
+    # internal apps
     'warehouse_module',
     'account_module'
 ]

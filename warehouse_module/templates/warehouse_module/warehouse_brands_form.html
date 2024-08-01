@@ -1,32 +1,63 @@
 {% extends 'shared/_layout.html' %}
+
 {% load static %}
 
 {% block content %}
+<style>
+    /* CSS Reset for form elements */
+    form {
+        all: initial; /* Reset all inherited styles */
+        direction: ltr;
+        width: 100%;
+        padding: 20px;
+    }
+
+    form * {
+        all: unset; /* Unset all inherited styles for children */
+        display: inline-block; /* Set default display */
+    }
+
+    form p {
+        display: block; /* Ensure labels are block elements */
+        margin: 0 0 5px; /* Default margin for labels */
+    }
+
+    form input, form select, form textarea, form button {
+        display: block; /* Ensure form inputs are block elements */
+        width: 100%; /* Make inputs full width */
+        margin-bottom: 10px; /* Space between inputs */
+        padding: 8px; /* Add some padding */
+        border: 1px solid #ccc; /* Add default border */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+
+    }
+
+
+</style>
 
 <!-- main -->
-
-    <div class="main">
-
-      <div class="main-header">
-
+<div class="main">
+    <div class="main-header">
         <h1>فرم ثبت برند های موبایل
-          <img src="{% static 'icons/Pre-assessment.png' %}"></img>
+            <img src="{% static 'icons/Pre-assessment.png' %}">
         </h1>
         <h2> اطلاعات موبایل های موجود در انبار شرکت </h2>
-
-      </div>
-
-      <div class="form">
-
-      </div>
-      <div class="form"></div>
-      <div class="form"></div>
-      <div class="form"></div>
-      <div class="form"></div>
-      <button class="button-19" role="button">تایید</button>
     </div>
 
-<!-- main -->
+    <form method="post" action="{% url 'index' %}">
+        {% csrf_token %}
 
+        {% for field in form %}
+            <div class="form">
+            <p>{{ field.label }}</p>
+            {{ field }}
+            {{ field.errors }}
+            </div>
+        {% endfor %}
+
+        <button class="button-19" role="button" type="submit" id="submit-button" style="float: right; text-align: center">تایید</button>
+    </form>
+</div>
+<!-- main -->
 
 {% endblock %}
