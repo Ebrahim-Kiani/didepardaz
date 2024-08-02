@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.add_brand, name='index')
+    path('brand/', views.BrandFormView.as_view(), name='brand-form'),
+    path('mobile/', views.MobileFormView.as_view(), name='mobile-form')
 ]

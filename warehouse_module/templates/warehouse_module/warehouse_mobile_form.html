@@ -2,31 +2,73 @@
 {% load static %}
 
 {% block content %}
+<style>
+    /* General CSS Reset for form elements */
+    form {
+        all: initial; /* Reset all inherited styles */
+        direction: ltr;
+        width: 100%;
+        padding: 20px;
+    }
+
+    form * {
+        font: inherit;
+        color: inherit;
+        background: none;
+        border: none;
+        box-sizing: border-box;
+    }
+
+    form p {
+        display: block; /* Ensure labels are block elements */
+        margin: 0 0 5px; /* Default margin for labels */
+    }
+
+    form input, form select, form textarea, form button {
+        display: block; /* Ensure form inputs are block elements */
+        width: 100%; /* Make inputs full width */
+        margin-bottom: 10px; /* Space between inputs */
+        padding: 8px; /* Add some padding */
+        border: 1px solid #ccc; /* Add default border */
+        box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+
+    /* Specific style for RadioSelect widget */
+    .my-form input[type="radio"] {
+        display: inline-block; /* Ensure radio buttons are inline-block */
+        width: auto; /* Set width to auto */
+        margin-right: 5px; /* Add margin to the right */
+    }
+
+    .my-form label {
+        display: inline; /* Ensure labels are inline */
+        margin-right: 15px; /* Add margin to the right */
+    }
+</style>
 
 <!-- main -->
-
-    <div class="main">
-
-      <div class="main-header">
-
-        <h1>فرم ثبت موبایل
-          <img src="{% static 'icons/Pre-assessment.png' %}"></img>
+<div class="main">
+    <div class="main-header">
+        <h1>فرم ثبت موبایل های انبار
+            <img src="{% static 'icons/Pre-assessment.png' %}">
         </h1>
         <h2> اطلاعات موبایل های موجود در انبار شرکت </h2>
-
-      </div>
-
-      <div class="form">
-          
-      </div>
-      <div class="form"></div>
-      <div class="form"></div>
-      <div class="form"></div>
-      <div class="form"></div>
-      <button class="button-19" role="button">تایید</button>
     </div>
 
-<!-- main -->
+    <form method="post" action="{% url 'mobile-form' %}">
+        {% csrf_token %}
 
+        {% for field in form %}
+            <div class="form">
+                <p>{{ field.label }}</p>
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+
+        <button class="button-19" role="button" type="submit" id="submit-button" style="float: right; text-align: center">تایید</button>
+    </form>
+</div>
+<!-- main -->
 
 {% endblock %}

@@ -41,10 +41,10 @@
         <h1>فرم ثبت برند های موبایل
             <img src="{% static 'icons/Pre-assessment.png' %}">
         </h1>
-        <h2> اطلاعات موبایل های موجود در انبار شرکت </h2>
+        <h2> اطلاعات برند های موبایل های موجود در انبار شرکت </h2>
     </div>
 
-    <form method="post" action="{% url 'index' %}">
+    <form method="post" action="{% url 'brand-form' %}">
         {% csrf_token %}
 
         {% for field in form %}

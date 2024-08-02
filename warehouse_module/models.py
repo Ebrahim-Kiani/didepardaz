@@ -1,9 +1,10 @@
 from django.db import models
 from django_countries.fields import CountryField
 
+
 # Create your models here.
 class Brand(models.Model):
-    name = models.CharField(max_length=20, blank=False, null=False)
+    name = models.CharField(max_length=20, blank=False, null=False, unique=True)
     country = CountryField()
 
     def __str__(self):
@@ -15,7 +16,7 @@ class Mobile(models.Model):
     model = models.CharField(max_length=20, blank=False, null=False, unique=True)
     price = models.PositiveIntegerField(blank=False, null=False)
     color = models.CharField(max_length=20, blank=False, null=False)
-    screem_size = models.PositiveIntegerField(max_length=20, blank=False, null=False)
+    screen_size = models.PositiveIntegerField(blank=False, null=False)
     available = models.BooleanField(blank=False, null=False)
     country = CountryField()
 
