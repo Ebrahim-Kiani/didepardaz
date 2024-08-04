@@ -68,6 +68,6 @@ class KoreanMobileAPIView(ListAPIView):
 
 
 class SameNationalAPIView(ListAPIView):
-    queryset = Mobile.objects.filter(country=F('brand__country'))
+    queryset = Mobile.objects.filter(country=F('brand__country')).select_related('brand')
     serializer_class = WarehouseSerializer
     permission_classes = [IsAuthenticated]
