@@ -1,0 +1,14 @@
+<!-- templates/partials/mobile_list.html -->
+{% for mobile in mobiles %}
+<div>
+    <h3>{{ mobile.brand.name }} - {{ mobile.model }}</h3>
+    <p>Price: {{ mobile.price }}</p>
+    <p>Color: {{ mobile.color }}</p>
+    <p>Screen Size: {{ mobile.screen_size }}</p>
+    <p>Available: {{ mobile.is_available }}</p>
+    <p>Country: {{ mobile.country.name }}</p>
+    <p>Brand Country: {{ mobile.brand.country.name }}</p>
+</div>
+{% empty %}
+<p>No results found</p>
+{% endfor %}

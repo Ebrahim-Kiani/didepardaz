@@ -19,7 +19,7 @@ class MobileForm(ModelForm):
         (False, "No")
     )
 
-    available = forms.TypedChoiceField(
+    is_available = forms.TypedChoiceField(
         choices=TWO_CHOICES,
         coerce=lambda x: x if x is None else (x == 'True'),
         widget=forms.RadioSelect(attrs={'class': 'my-form'}),  # Use radio buttons for selection
@@ -30,7 +30,7 @@ class MobileForm(ModelForm):
 
     class Meta:
         model = Mobile
-        fields = ['brand', 'model', 'price', 'color', 'screen_size', 'available', 'country']
+        fields = ['brand', 'model', 'price', 'color', 'screen_size', 'is_available', 'country']
         widgets = {
             'country': CountrySelectWidget(),
 

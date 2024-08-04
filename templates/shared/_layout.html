@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <title>arjmand</title>
+    <title>dide pardaz saba</title>
     <link rel="stylesheet" href="{% static '/bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700,800" />
@@ -69,13 +69,13 @@
           <div class="collapse navbar-collapse" id="navcol-5">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="">فرم ثبت موبایل</a>
+                <a class="nav-link" href="{% url 'brand-form' %}">فرم ثبت برند</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">فرم ثبت برند</a>
+                <a class="nav-link" href="{% url 'mobile-form' %}">فرم ثبت موبایل</a>
               </li>
                <li class="nav-item">
-                <a class="nav-link" href="#">لیست اطلاعات</a>
+                <a class="nav-link" href="{% url 'inforamtoin-menu' %}">لیست اطلاعات</a>
               </li>
 
             </ul>

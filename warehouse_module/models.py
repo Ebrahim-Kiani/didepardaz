@@ -17,7 +17,7 @@ class Mobile(models.Model):
     price = models.PositiveIntegerField(blank=False, null=False)
     color = models.CharField(max_length=20, blank=False, null=False)
     screen_size = models.PositiveIntegerField(blank=False, null=False)
-    available = models.BooleanField(blank=False, null=False)
+    is_available = models.BooleanField(blank=False, null=False)
     country = CountryField()
 
     def __str__(self):

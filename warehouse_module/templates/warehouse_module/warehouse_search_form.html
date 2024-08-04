@@ -1,0 +1,45 @@
+{% extends 'shared/_layout.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- main -->
+     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+                <script>
+
+                    function triggerHTMXRequest() {
+                        const inputs = document.querySelectorAll("input[name='input-search']");
+                        inputs.forEach(input => {
+                            input.dispatchEvent(new Event('change', { bubbles: true }));
+                        });
+                    }
+                </script>
+
+    <div class="main">
+
+      <div class="main-header">
+
+        <h1>فرم سرچ موبایل بر اساس نام برند
+
+        </h1>
+
+      </div>
+
+
+
+
+    <form style="direction: ltr" id="initial-form" method="post" hx-post="{% url 'search-mobile' %}" hx-trigger="change from:[name='input-search']" hx-target="#result">
+    {% csrf_token %}
+        <label for="input-search"> search here </label>
+        <input type="text" name="input-search" id="input-search">
+    <div id="result">
+
+    </div>
+</form>
+    </div>
+
+<!-- main -->
+
+
+
+{% endblock %}

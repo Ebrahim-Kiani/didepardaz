@@ -1,0 +1,32 @@
+{% extends 'shared/_layout.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="main">
+
+      <div class="main-header">
+
+        <h1>لیست اطلاعات انبار
+
+        </h1>
+
+      </div>
+
+
+
+
+<a href="{% url 'koran-mobile-list' %}"> لیست تمامی موبایل هایی که ملیت آنها کره جنوبی است(south korea) </a>
+<a href="{% url 'same-national-list' %}"> لیست تمامی موبایل هایی که ملیت آنها با ملیت برند آنها یکسان است</a>
+<a href="{% url 'search-mobile' %}">لیست جستجوی موبایل بر اساس برند آنها</a>
+
+    </div>
+    </form>
+    </div>
+
+<!-- main -->
+
+
+
+{% endblock %}
