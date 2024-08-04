@@ -79,7 +79,12 @@
               </li>
 
             </ul>
-            <a class="btn btn-primary ms-md-2" role="button" href="">ورود</a>
+              {% if user.is_authenticate %}
+                  <a class="btn btn-primary ms-md-2" role="button" href="{% url 'logout' %}">خروج از حساب</a>
+              {% else %}
+                  <a class="btn btn-primary ms-md-2" role="button" href="{% url 'login' %}">ورود به حساب</a>
+              {% endif %}
+          
           </div>
           <button
             data-bs-target="#navcol-5"
