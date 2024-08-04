@@ -21,11 +21,11 @@ class LoginView(View):
         login_form = LoginForm(request.POST)
 
         if login_form.is_valid():
-            user_email = login_form.cleaned_data.get("username")
+            user_name = login_form.cleaned_data.get("username")
             user_password = login_form.cleaned_data.get("password")
 
             # Authenticate the user
-            user = User.objects.filter(email=user_email).first()
+            user = User.objects.filter(username=user_name).first()
 
             if user is not None:
                 if user.check_password(user_password):
@@ -33,7 +33,7 @@ class LoginView(View):
                     if user.is_active:
                         if user.is_staff:
                             login(request, user)
-                            return redirect(reverse('pre-evaluation'))
+                            return redirect(reverse('brand-form'))
                         else:
                             login_form.add_error(None,
                                                  'حساب کاربری شما کارمندی نیست')

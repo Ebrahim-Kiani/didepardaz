@@ -144,3 +144,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+
+# login url for reverse user if not authenticated
+LOGIN_URL = 'login'
